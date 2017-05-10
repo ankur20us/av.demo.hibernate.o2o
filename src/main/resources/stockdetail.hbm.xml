@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="av.demo.hibernate.o2o.modal.StockDetail" table="stock_detail">
+
+		<id name="stockId" >
+			<generator class="foreign">
+				<param name="property">stock</param>
+			</generator>
+		</id>
+		<one-to-one name="stock" class="av.demo.hibernate.o2o.modal.Stock" constrained="true"></one-to-one>
+			
+		<property name="compName" type="string"/>
+		<property name="compDesc" type="string"/>
+		<property name="remark" type="string"/>
+		<property name="listedDate" type="date"/>
+
+	</class>
+
+
+</hibernate-mapping>

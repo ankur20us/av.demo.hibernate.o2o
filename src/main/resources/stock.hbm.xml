@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="av.demo.hibernate.o2o.modal.Stock" table="stock">
+
+		<id name="stockId" column="stockId" />
+		<property name="stock_code" length="10"></property>
+		<property name="stock_name"></property>
+		
+		<one-to-one name="stockDetail" class="av.demo.hibernate.o2o.modal.StockDetail" cascade="all"></one-to-one>
+
+	</class>
+</hibernate-mapping>
